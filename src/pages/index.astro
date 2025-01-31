@@ -1,7 +1,7 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro'
+import Carousel from '../components/Carousel.astro'
+import rice from "../assets/rice.png";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -18,12 +18,65 @@ import Navbar from '../components/Navbar.astro'
 
     <body>
         <Navbar/>
+        <Carousel/>
+        <div id="attention">
+            <div id="text-container">
+                <h1>Have a delicious meal of tasty vegetarian food</h1>
+                <p>
+                    We are committed to serving fresh and tasty Indian cuisine with as many locally sourced ingredients as possible. 
+
+                    We strive for authenticity with most recipes being passed down through generations of Indian families. 
+                    
+                    We also strive to leave little impact on the environment by using most of our profits to support local climate organizations and charities.
+                </p>
+
+                <img src={rice.src}>
+            </div>
+        </div>
+        <div id="ad">
+            <h1>WE OFFER <strong>DINE-IN</strong>BOTH AND <strong>CARRYOUT</strong></h1>
+        </div>
     </body>
 </html>
 
-<style>
+<style lang="scss">
+    @font-face {
+        font-family: 'Poppins';
+        src: url("/fonts/Poppins-Regular.ttf") format("ttf");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+    html {
+        font-family: 'Poppins', sans-serif;
+    }
 
-/* body {
-        margin: 0;
-    } */
+    #attention {
+        // display: none;
+        #text-container {
+            margin-left: 2rem;
+            display: inline-flex;
+            flex-direction: left;
+            h1, p {
+                
+                max-width: 40%;
+            }
+        }
+
+        img {
+            display: inline-flex;
+            flex-direction: right;
+            width: 40%;
+        }
+        
+    }
+
+    #ad {
+        background-color: white;
+        width: 100%;
+        margin-left: auto;
+        h1 {
+            text-align: center;
+        }
+    }
 </style>
