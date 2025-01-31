@@ -1,7 +1,84 @@
 ---
-import logo from "../assets/BIRYANI.svg"
+import logo_white from "../assets/logo_white.png"
+import logo_black from "../assets/logo_black.png"
 ---
 
 <div id="nav-bar">
-    <img src={logo.src} alt="MADRAS" id="logo"/>
+    <img src={logo_black.src} alt="MADRAS" id="logo-black"/>
+    <img src={logo_white.src} alt="MADRAS" id="logo-white">
+
+    <ul id="links">
+        <li><a href="">About</a></li>
+        <li><a href="">Menu</a></li>
+        <li><a href="">Hours & Location</a></li>
+        <li><a href="">Reference</a></li>
+    </ul>
 </div>
+
+<style lang="scss">
+    root {
+
+    }
+    @font-face {
+        font-family: 'Poppins';
+        src: url("/fonts/Poppins-Regular.ttf") format("ttf");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+    @media (prefers-color-scheme: dark) {
+        #logo-white {
+            display:none;
+        }
+        #nav-bar {
+            background-color: black;
+
+            #links > li {
+                color: white;
+            }
+        }
+
+    }
+    @media (prefers-color-scheme: light) {
+        #logo-black {
+            display:none;
+        }
+        #nav-bar {
+            background-color: white;
+            #links > li {
+                color: black;
+            }
+        }
+    }
+
+
+    
+    #nav-bar {
+        width: 100%;
+
+        img {
+            padding-left: 1em;
+            width: 15%;
+        }
+
+        #links {
+            display: inline-block;
+            max-width: fit-content;
+            // margin-inline: auto;
+            margin-left:auto;
+
+            li {
+                font-family: 'Poppins', sans-serif;
+                
+                display: table-cell;
+                padding-left: 1rem;
+                padding-right: 1rem;
+
+                a {
+                    color: inherit;
+                    text-decoration: inherit;
+                }
+            }
+        }
+    }
+</style>
