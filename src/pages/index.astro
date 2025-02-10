@@ -1,6 +1,6 @@
 ---
 import Navbar from '../components/Navbar.astro'
-import Carousel from '../components/Carousel.astro'
+import Carousel from '../components/MainPageCarousel.astro'
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -18,22 +18,26 @@ import Carousel from '../components/Carousel.astro'
     <body>
         <Navbar/>
         <Carousel/>
+        <div id="main-content">
         <div id="attention">
             <div id="text-container">
-                <h1>Have a delicious meal of tasty vegetarian food</h1>
+                <h1>Have a delicious meal of tasty vegetarian food</h1> <br>
                 <p>
                     We are committed to serving fresh and tasty Indian cuisine with as many locally sourced ingredients as possible. 
-
+                </p>
+                <p>
                     We strive for authenticity with most recipes being passed down through generations of Indian families. 
-                    
+                </p>
+                    <p>
                     We also strive to leave little impact on the environment by using most of our profits to support local climate organizations and charities.
                 </p>
-
-                <img src="https://images.pexels.com/photos/9609859/pexels-photo-9609859.jpeg">
             </div>
+            <div id="divider"/>
+            <img src="https://images.pexels.com/photos/9609859/pexels-photo-9609859.jpeg">
         </div>
         <div id="ad">
             <h1>WE OFFER <strong>DINE-IN</strong>BOTH AND <strong>CARRYOUT</strong></h1>
+        </div>
         </div>
     </body>
 </html>
@@ -41,31 +45,64 @@ import Carousel from '../components/Carousel.astro'
 <style lang="scss">
     @font-face {
         font-family: 'Poppins';
-        src: url("/fonts/Poppins-Regular.ttf") format("ttf");
-        font-weight: normal;
+        src: url('/https://github.com/qdread-dev/webmaster-2025/fonts/Poppins-Regular.ttf') format('truetype');
+        font-weight: 400;
         font-style: normal;
         font-display: swap;
     }
-    html {
-        font-family: 'Poppins', sans-serif;
+
+    @font-face {
+        font-family: 'Poppins-Bold';
+        src: url('/https://github.com/qdread-dev/webmaster-2025/fonts/Poppins-Bold.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
     }
 
+    @font-face {
+        font-family: 'Poppins-Bold';
+        src: url('/https://github.com/qdread-dev/webmaster-2025/fonts/Poppins-Bold.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    html {
+        font-family: 'Poppins';
+    }
+    h1 {
+        font-family: 'Poppins-Bold';
+        font-size:xx-large;
+    }
+
+    h1, p {
+        color: rgb(0, 0, 0);
+    }
+    
+    #main-content {
+        background-color: white;
+        padding: 50px;
+    }
     #attention {
-        // display: none;
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        padding-bottom:50px;
         #text-container {
             margin-left: 2rem;
             display: inline-flex;
-            flex-direction: left;
+            flex-direction: column;
             h1, p {
-                
-                max-width: 40%;
+                max-width: 70%;
             }
         }
-
         img {
             display: inline-flex;
             flex-direction: right;
-            width: 40%;
+            object-fit: cover;
+            width: 100%;
+            height: 300px;
         }
         
     }
@@ -75,6 +112,9 @@ import Carousel from '../components/Carousel.astro'
         width: 100%;
         margin-left: auto;
         h1 {
+            strong {
+
+            }
             text-align: center;
         }
     }

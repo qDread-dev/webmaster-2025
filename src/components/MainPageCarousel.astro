@@ -1,0 +1,90 @@
+---
+import "../styles/global.css"
+import rice from "../assets/rice.png";
+//import 'bootstrap/dist/css/bootstrap.css'
+
+const id = "mainPageCarousel"
+
+const slideLinks = [
+  "https://s3-alpha-sig.figma.com/img/e86a/9e1e/41860c814bcbf2cd4e124d9885d81bdb?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=tz-GIPnb3b3HKT~xi~fOSU~E5tfvnQKzWZ8lBBA~PiUssgqlWCEAZ5i3vscBfDvaalk6leMsmj1YsovjXafHZLee584np1c3O3QCbkrE17zSQEffPObY3-xmXv~OHgeIEILr9WHNmcB2iiW073mLEejGSI3vq4vspYZZifVLKI08LR607OUmP2TIIo1oyZ3-hRT1XgcbUP1TiQVXxlTo~oOrSk5~nhpeWVWuvAc-miImT8g8q9b66Nff1DeDy5-QzTGa0Xf7kiEeGeFDZVhq2HxyehWGv0N6LBhJW8IqlVd~usFIl0NYRQHqQSkRkVmC6WvGnaa2r9rNA-3d43A1cQ__",
+  "https://s3-alpha-sig.figma.com/img/be5c/6926/d765aa9e18116e0ce36ce4f86958b934?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=d0Pd~11rwxVu5D2mbl92j9LCRdAT4szSL12wHXL5zoKsnEImKzAX5NlbWRt2liLDRQEoLzum2Ng4W7yYQUi9bTNHwcvrHu7Lx-B~s5BZZtq9zgL7J~Fi9dzbcbkzuVJQzY0WNPfa58tB3DBbBfChUyWSjX15ZUZGwabkmZV-5adOFE5zxJCqfsJtPwFxawhqXWBfTRO3s8~AqzK4MuYTysP24M9yCxgdy7lAGlwUGImu~k95gvwlZunpanfvq-ZoGfq5Zp8Gq1kcD8MuY~oXy9M9NLGE-7Ixs3gepi5pksOhLfr~v14GtLke8SXf7JpAqol1-JmNVXqTMfhQA8bsfg__",
+  "https://s3-alpha-sig.figma.com/img/7606/44ea/e25a69e2d61d307513481a680ef0e186?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Dg5rpK5~UHtxpgGKTMztKFQW8tbKDlzlDl2Du9uDugpX3bK4M-ZQdBtXyzdi0jUpRGH1SCYKW2m~vOFim1S9MJuTQeJJkVJop6jZFD3tAfR2K~dRLk28u7EPKkBGQxcu6-IHKBcuSJ8SnD54CAvmXTmnGxUzsffdKroWjQZoSRok0V1jXtL2UUKozvcMsUOhRABaHKvR2XwUsMk8dllUiTkydQD1PdCYPN-QMsVNwFi-bIN8OQ7TISxdgbvZRtXrSaxZnwinIAKmkgig7vHZAzp7-ViJ1jSvSTmTa3TAMXuDjPRt~bpqVZmfgJLFlNc9xYMTaIhUmzIQ-WKyu3iZpQ__",
+  "https://s3-alpha-sig.figma.com/img/64f1/bef3/fc3465e461b86d9c0ed22b1f2dd8d48e?Expires=1739750400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=OJIGEQ9-K4twVSzeabaJRIS5GKfx~kgSr8ui0P6NaQRjSYyWNhp~Eq-SKV3AvZLKJDcW5Eq5uiJO-YqLa9YdXDsge~rRms-D7B6kcLl~L~fqHBB2Mg~M0VZhEJQuIPjCz8l5NfotHbnEjXdKMecxZJxkGxkLBSm0L~aNuESEpwi5xi3EW7EDbkhEzdiws--beb1N5sTnt-tcNVR2Np2IByW5Uo4EW1D6cwgwhM0GuITK3Tz1m-iHvAERqbPYI841W4~mtu1Tv7OgL~cIN35ar15AaAHO0pb~d1gbGyEiFZziTv-g5uOR2wXjq3qRb7d-N-Cm8ge4NfKrf2sFXEnpXw__"
+]
+
+
+
+const slides = [
+  {idx: 1, img: slideLinks[0], style: "height: 450px; object-fit: cover;"},
+  {idx: 2, img: slideLinks[1], style: "height: 450px; object-fit: cover;"},
+  {idx: 3, img: slideLinks[2], style: "height: 450px; object-fit: cover;"},
+  {idx: 4, img: slideLinks[3], style: "height: 450px; object-fit: cover;"},
+]
+---
+<div class="carousel w-full">
+  {
+    slides.map((slide, index) => (
+      <div id={"slide" + slide.idx} class="carousel-item relative w-full">
+        <img
+          src={slide.img}
+          class="w-full"
+          style={slide.style}/>
+        <div class="absolute left-20 right-5 top-1/2 flex -translate-y-1/2 transform justify-between" id="contrastRectangle">
+          <h1>CHECK OUT OUR INDIAN VEGETARIAN CUISINE IN OUR MENU</h1>
+        </div>
+        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+          <a href={"#slide" + (index === 0 ? slides.length : index)} class="btn btn-circle">❮</a>
+          <a href={"#slide" + (index === slides.length - 1 ? 1 : index + 2)} class="btn btn-circle">❯</a>
+        </div>
+      </div>
+    ))
+  }
+</div>
+
+<style lang="scss">
+    @font-face {
+      font-family: 'Poppins-Bold';
+      src: url('/https://github.com/qdread-dev/webmaster-2025/fonts/Poppins-Bold.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    h1 {
+      font-family: 'Poppins-Bold';
+      font-size: 40px
+    }
+    #contrastRectangle {
+      width:500px;
+      height:60%;
+      background:rgb(46, 43, 43);
+      border-radius: 25px;
+      opacity: 75%;
+      padding: 20px;
+      align-items: center;
+    }
+    #mainPageCarousel {
+        width:100%;
+        height: 40svh;
+        // background-color:red;
+        // overflow: hidden;
+
+        // overflow: hidden;
+        background-color: black;
+
+        overflow: hidden;
+        #items {
+            display: flex;
+            flex-direction: right;
+            overflow: scroll;
+            img {
+                width: 100%;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                // object-fit: fill;
+            }
+        }
+        
+        
+    }
+</style>
