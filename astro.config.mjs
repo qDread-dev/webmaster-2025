@@ -9,7 +9,7 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   integrations: [react()],
   site: "https://qdread-dev.github.io/",
-  base: "https://github.com/qdread-dev/webmaster-2025",
+  base: "/",
 
   vite: {
     plugins: [tailwindcss()]
