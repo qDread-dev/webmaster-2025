@@ -1,0 +1,45 @@
+---
+const {header} = Astro.props;
+---
+
+
+<div class="section-contain">
+    <div class="header-contain">
+        <h1>{header}</h1>
+    </div>
+    <div class="item-contain">
+        <slot/>
+    </div>
+</div>
+
+<style lang="scss">
+    .section-contain {
+        // margin: 20px;
+        // margin-left: auto;
+        // margin-right: auto;
+        // margin: 0.5rem;
+        width: 95%;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        display: flex;
+        justify-self: center;
+        flex-direction: column;
+        .header-contain {
+            text-align: center;
+        }
+        .item-contain {
+            // margin: 1rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            justify-self: center;
+            flex-direction: row;
+            // &:first-child {
+            //     margin-left:0.5rem;
+            // }
+
+        }
+    }
+</style>

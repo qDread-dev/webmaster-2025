@@ -1,0 +1,44 @@
+---
+import MenuItem from '../components/MenuItem.astro';
+import MenuSection from '../components/MenuSection.astro';
+import Navbar from '../components/Navbar.astro';
+import tomatosoup from '../assets/tomatosoup.jpg';
+import mushroomsoup from '../assets/mushroomsoup.jpg';
+import vegsoup from '../assets/vegsoup.jpg';
+import gobi from '../assets/gobi.jpg';
+import paneer from '../assets/paneer.jpg';
+import naan from '../assets/naan.jpg';
+import roti from '../assets/roti.jpg';
+---
+
+<html lang="en">
+    <head>
+        <title>Menu | MADRAS</title>
+    </head>
+    <body>
+        <Navbar/>
+        <MenuSection header="SOUPS">
+            <MenuItem title="Tomato Soup" desc="Classic tomato soup that is creamy and filling" price="$5.99" src={tomatosoup}/>
+            <MenuItem title="Mushroom Soup" desc="Creamy, delicious soup made from portobello mushrooms" price="$6.99" src={mushroomsoup}/>
+            <MenuItem title="Veg Hot and Sour Soup" desc="Tangy, spicy, and savory Indo-Chinese soup" price="$6.99" src={tomatosoup}/>
+            <MenuItem title="Vegetable Soup" desc="Spicy soup with carrots, peas, and corn" price="$5.99" src={vegsoup}/>
+        </MenuSection>
+        <MenuSection header="APPETIZERS">
+            <MenuItem title="Gobi Manchurian" desc="Fried cauliflower covered in a sweet ginger and garlic sauce" price="$7.99" src={gobi}/>
+            <MenuItem title="Veg Manchurian" desc="Fried vegetables covered in a sweet and spicy sauce" price="$6.99" src={paneer}/>
+            <MenuItem title="Paneer 65" desc="Deep-fried paneer marinated with a tasty spice mix" price="$7.99" src={paneer}/>
+            <MenuItem title="Chilli Paneer" desc="Batter-fried paneer tossed with a spicy savory sauce" price="$7.59" src={paneer}/>
+        </MenuSection>
+        <MenuSection header="BREADS">
+            <MenuItem title="Garlic Naan" desc="xxx" price="$7.99" src={naan}/>
+            <MenuItem title="Butter Naan" desc="xxx" price="$6.99" src={naan}/>
+            <MenuItem title="Roti" desc="xxx" price="$7.99" src={roti}/>
+            <MenuItem title="Paratha" desc="xxx" price="$7.59" src={roti}/>
+        </MenuSection>
+
+        
+    </body>
+</html>
+
+<style>
+</style>

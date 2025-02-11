@@ -1,0 +1,65 @@
+---
+import {Image} from 'astro:assets';
+
+const {title, desc, price, src, ...attrs} = Astro.props;
+
+---
+
+<div class="menu-item">
+
+    <Image id="menu-image" src={src} inferSize="true" {...attrs} alt="A menu item"/>
+
+    <div class="desc">
+        <h1>{title}</h1>
+        <p>{desc}</p>
+        <div class="bottom-bar">
+            <p class="price">{price}</p>
+            <!-- <button class="add-cart">ADD</button> -->
+        </div>
+    </div>
+
+</div>
+
+<style lang="scss">
+    .menu-item {
+        border-radius: 15px;
+        // margin: 1rem;
+        max-width: 22vw;
+
+        background-color: #e6e6e6;
+        
+        h1 {
+            font-weight: 600;
+        }
+        
+        #menu-image {
+            max-height: 22vw;
+            object-fit: cover;
+            width: 100%;
+            margin: 0;
+            border-radius: 15px 15px 0 0;
+        }
+        .desc {
+            padding: 30px;
+            height: 30%;
+
+            .bottom-bar {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+
+                max-height: min-content;
+
+                // button.add-cart {
+                //     height: 100%;
+                //     width: 45%;
+                //     background-color: #ff6f6f;
+                //     border: 1px solid #ff6f6f;
+                //     border-radius: 0.25rem;
+                // }
+            }
+
+        }
+
+    }
+</style>
