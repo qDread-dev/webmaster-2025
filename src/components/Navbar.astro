@@ -1,11 +1,9 @@
 ---
-import logo_white from "../assets/logo_white.png"
-import logo_black from "../assets/logo_black.png"
 ---
 
 <div id="nav-bar">
-    <img src={logo_black.src} alt="MADRAS" id="logo-black"/>
-    <img src={logo_white.src} alt="MADRAS" id="logo-white">
+    <img src='/public/images/logo_black.png' alt="MADRAS" id="logo-black"/>
+    <img src='/images/logo_white.png' alt="MADRAS" id="logo-white">
 
     <ul id="links">
         <li><a href="">About</a></li>
@@ -60,7 +58,7 @@ import logo_black from "../assets/logo_black.png"
 
         img {
             padding-left: 1em;
-            width: 15%;
+            width: 10%;
         }
 
         #links {
@@ -68,6 +66,7 @@ import logo_black from "../assets/logo_black.png"
             max-width: fit-content;
             // margin-inline: auto;
             margin-left:auto;
+            font-size: 1.5em;
 
             li {
                 font-family: 'Poppins', sans-serif;
