@@ -1,5 +1,6 @@
 ---
 import MenuItem from '../components/MenuItem.astro';
+import MenuSection from '../components/MenuSection.astro';
 import Navbar from '../components/Navbar.astro';
 ---
 
@@ -9,6 +10,16 @@ import Navbar from '../components/Navbar.astro';
     </head>
     <body>
         <Navbar/>
+        <MenuSection header="soup">
+            <MenuItem title="Tomato Soup" desc="Classic tomato soup that is creamy and filling" price="$5.99" src="https://i1.pickpik.com/photos/435/66/530/food-drink-food-healthy-soup-preview.jpg"/>
+            <MenuItem title="Mushroom Soup" desc="Creamy, delicious soup made from portobello mushrooms" price="$6.99" src="https://i1.pickpik.com/photos/435/66/530/food-drink-food-healthy-soup-preview.jpg"/>
+            <MenuItem title="Veg Hot and Sour Soup" desc="Tangy, spicy, and savory Indo-Chinese soup" price="$6.99" src="https://i1.pickpik.com/photos/435/66/530/food-drink-food-healthy-soup-preview.jpg"/>
+            <MenuItem title="Vegetable Soup" desc="Spicy soup with carrots, peas, and corn" price="$5.99" src="https://i1.pickpik.com/photos/435/66/530/food-drink-food-healthy-soup-preview.jpg"/>
+
+        </MenuSection>
         
     </body>
 </html>
+
+<style>
+</style>
