@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
 
 import react from '@astrojs/react';
 
@@ -11,6 +11,9 @@ export default defineConfig({
   site: "https://qdread-dev.github.io/",
 
   base: "/webmaster-2025",
+  image: {
+    service: passthroughImageService()
+  },
 
   vite: {
     plugins: [tailwindcss()]
