@@ -1,0 +1,25 @@
+---
+const {src, ...attrs} = Astro.props;
+import {Image} from 'astro:assets';
+---
+
+<div class="image-bar">
+    <Image id="image" src={src} {...attrs} alt="header image" inferSize={true}></Image>
+</div>
+
+
+<style lang="scss">
+    .image-bar {
+        width: 100vw;
+        display:flex;
+        justify-self:center;
+        // overflow: hidden;
+        height: 25vh;
+
+        overflow: hidden;
+        #image {
+            object-fit: cover;
+            width:100%;
+        }
+    }
+</style>
