@@ -18,7 +18,21 @@ import {Image} from 'astro:assets';
             <!-- <Image/> -->
         </div>
         <div id="map">
-
+            <div style="max-width:100%;overflow:hidden;color:red;width:100%;height:500px;">
+                <div id="google-maps-display" style="height:100%; width:100%;max-width:100%;">
+                  <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=1426+Dunwoody+Village+Parkway&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                </div>
+                <a class="googlemaps-made" href="https://kbj9qpmy.com/hrn" id="inject-map-data">InMotion Hosting</a>
+                <style>
+                  #google-maps-display .text-marker {}
+              
+                  .map-generator {
+                    max-width: 100%;
+                    max-height: 100%;
+                    background: none;
+                }
+                </style>
+            </div>
         </div>
         <!-- footer -->
     </body>
