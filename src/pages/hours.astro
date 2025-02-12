@@ -2,7 +2,7 @@
 import Navbar from "../components/Navbar.astro";
 import ImageBar from "../components/ImageBar.astro";
 import roti from '../assets/vegsoup.jpg';
-
+import {Image} from 'astro:assets';
 ---
 
 <html lang="en">
@@ -11,6 +11,15 @@ import roti from '../assets/vegsoup.jpg';
     </head>
     <body>
         <Navbar/>
-        <ImageBar src={roti}>
+        <ImageBar src={roti}/>
+        <div id="tim">
+            <div class="text-contain"></div>
+            <div class="text-contain"></div>
+            <!-- <Image/> -->
+        </div>
+        <div id="map">
+
+        </div>
+        <!-- footer -->
     </body>
 </html>
