@@ -1,0 +1,51 @@
+---
+const phoneNumber = "470-746-9996"
+const email = "madrasvegrestraunt@gmail.com"
+---
+
+<div id="footer">
+    <div id="content">
+        <h1>CONTACT US AT</h1>
+        <div class="details"><h1>Email:&nbsp;</h1> <h1 style="color: red;">{email}</h1></div>
+        <div class="details"><h1>Phone:&nbsp;</h1> <h1 style="color: red;">{phoneNumber}</h1></div>
+    </div>
+    <img src='/webmaster-2025/images/logo_black.png' alt="MADRAS" id="logo-black"/>
+    <!-- <img src='/webmaster-2025/images/logo_black.png' alt="MADRAS" id="logo-white"/> -->
+</div>
+
+<style>
+    .details {
+        display: flex;
+        flex-direction: row;
+    }
+    #footer {
+        background-color: black;
+        width: 100%;
+        display: flex;
+        @media (max-width: 1000px) {
+            flex-direction: column;
+        }
+        flex-direction: row;
+        align-items: center; justify-content: center;
+        column-gap: 5vw;
+        row-gap: 3vw;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+        img {
+            height: 150px;
+            width: fit-content;
+        }
+    }
+    h1 {
+        font-family: 'Poppins-Bold';
+        font-size: x-large;
+    }
+    @font-face {
+      font-family: 'Poppins-Bold';
+      src: url('/webmaster-2025/fonts/Poppins-Bold.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+</style>
