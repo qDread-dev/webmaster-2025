@@ -2,6 +2,11 @@
 import Footer from '../components/Footer.astro'
 import Navbar from '../components/Navbar.astro'
 import { Image } from 'astro:assets';
+import table2 from '../assets/table2.jpg';
+import fam from '../assets/fam.jpg';
+import vege from '../assets/vege.jpg';
+import clay from '../assets/clay.jpg';
+import comp from '../assets/comp.jpeg';
 ---
 <html lang="en">
     <head>
@@ -16,18 +21,21 @@ import { Image } from 'astro:assets';
             <Image></Image> -->
         </div>
         <div id="mission">
-            <div class="mission-desc">
-                <p>
-                    The dream of a restaurant started in college, where homemade meals became a source for the nostalgia students desperately wanted to feel once becoming independent. Through their shared love for Indian cuisine, Evan and Karthik cooked meals using recipes passed down through generations in Karthik's family, and eventually, this grew into a desire to cook meals for our entire community.
-                </p>
-            </div>
-            <div class="mission-desc">
-                <p>
-                    At this restaurant, we aspire to carry the legacy given to us by Karthik's ancestors from India through our authentic vegetarian cuisine. We strive for our customers to feel the same sense of nostalgia when Karthik and Evan cooked for themselves in college with their parents recipes.
-                </p>
-            </div>
-            <div id="mission-image">
-                <!-- <Image/> -->
+            <h1>Our Mission</h1>
+
+            
+            <div id="m-grid">
+                
+                <div class="mission-desc">
+                    <p>
+                        The dream of a restaurant started in college, where homemade meals became a source for the nostalgia students desperately wanted to feel once becoming independent. Through their shared love for Indian cuisine, Evan and Karthik cooked meals using recipes passed down through generations in Karthik's family, and eventually, this grew into a desire to cook meals for our entire community.
+                        <br>
+                        At this restaurant, we aspire to carry the legacy given to us by Karthik's ancestors from India through our authentic vegetarian cuisine. We strive for our customers to feel the same sense of nostalgia when Karthik and Evan cooked for themselves in college with their parents recipes.
+                    </p>
+                </div>
+                <div id="mission-image">
+                    <Image id="m-img" src={table2} alt="food on table"/>
+                </div>
             </div>
         </div>
 
@@ -45,19 +53,19 @@ import { Image } from 'astro:assets';
         <div id="approach-steps">
             <div class="step">
                 <div id="text"></div>
-                <!-- <Image/> -->
+                <Image src={fam} alt="family in feild"/>
             </div>
             <div class="step">
                 <div id="text"></div>
-                <!-- <Image/> -->
+                <Image src={vege} alt="veges on a table"/>
             </div>
             <div class="step">
                 <div id="text"></div>
-                <!-- <Image/> -->
+                <Image src={clay} alt="woman"/>
             </div>
             <div class="step">
                 <div id="text"></div>
-                <!-- <Image/> -->
+                <Image src={comp} alt="composting"/>
             </div>
             <div class="step">
                 <div id="text"></div>
@@ -68,3 +76,25 @@ import { Image } from 'astro:assets';
         <Footer/>
     </body>
 </html>
+
+<style lang="scss">
+    #mission {
+        h1 {
+            text-align:center;
+        }
+        #m-grid {
+            display: grid;
+
+            grid-template-areas: "text image";
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            .mission-desc {
+                grid-area: text;
+                margin-left: 2rem;
+            }
+            #m-img {
+                grid-area: image;
+            }
+        }
+    }
+</style>
