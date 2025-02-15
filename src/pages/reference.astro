@@ -5,6 +5,7 @@ import ImageBar from "../components/ImageBar.astro";
 import ref1 from "../assets/ref1.jpg";
 import salt from "../assets/salt.jpg";
 import Image from "astro/components/Image.astro";
+import table from "../assets/table.jpg";
 ---
 
 <html lang="en">
@@ -17,31 +18,36 @@ import Image from "astro/components/Image.astro";
         <ImageBar header="References" src={ref1}/>
         <!-- content (info citations) -->
 
+        <h1>Content</h1>
         <div id="content-section">
-            <h1>Content</h1>
-            <ul>
-                <li>
-                    <a href="https://www.indianhealthyrecipes.com/gobi-manchurian-recipe/">https://www.indianhealthyrecipes.com/gobi-manchurian-recipe/</a>
-                </li>
-                <li>
-                    <a href="https://www.indianhealthyrecipes.com/chilli-paneer-recipe/">https://www.indianhealthyrecipes.com/chilli-paneer-recipe/</a>
-                </li>
-                <li>
-                    <a href="https://www.acfb.org/">https://www.acfb.org/</a>
-                </li>
-                <li>
-                    <a href="https://www.feedingamerica.org/find-your-local-foodbank">https://www.feedingamerica.org/find-your-local-foodbank</a>
-                </li>
-                <li>
-                    <a href="https://www.ecoleducasse.com/en/blog/sustainability-restaurants-and-why-it-matters">https://www.ecoleducasse.com/en/blog/sustainability-restaurants-and-why-it-matters</a>
-                </li>
-            </ul>
-            <Image id="salt" src={salt} alt="man sprinkling salt"/>
+            <div class="text-wrap">
+                <ul>
+                    <li>
+                        <a href="https://www.indianhealthyrecipes.com/gobi-manchurian-recipe/">https://www.indianhealthyrecipes.com/gobi-manchurian-recipe/</a>
+                    </li>
+                    <li>
+                        <a href="https://www.indianhealthyrecipes.com/chilli-paneer-recipe/">https://www.indianhealthyrecipes.com/chilli-paneer-recipe/</a>
+                    </li>
+                    <li>
+                        <a href="https://www.acfb.org/">https://www.acfb.org/</a>
+                    </li>
+                    <li>
+                        <a href="https://www.feedingamerica.org/find-your-local-foodbank">https://www.feedingamerica.org/find-your-local-foodbank</a>
+                    </li>
+                    <li>
+                        <a href="https://www.ecoleducasse.com/en/blog/sustainability-restaurants-and-why-it-matters">https://www.ecoleducasse.com/en/blog/sustainability-restaurants-and-why-it-matters</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="image-sec">
+                <Image id="table" src={table} alt="table of bowls"/>
+
+            </div>
         </div>
 
+        <h1>Images</h1>
         <div id="image-section">
             
-            <h1>Images</h1>
             <div class="text-wrap">
                 
                 <ul>
@@ -181,10 +187,14 @@ import Image from "astro/components/Image.astro";
 </html>
 
 <style lang="scss">
+
+    body > h1 {
+        text-align: center;
+    }
     #content-section, #image-section {
         margin: 0 4rem 0 4rem;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto;
         h1 {
             text-align: center;
@@ -192,22 +202,44 @@ import Image from "astro/components/Image.astro";
     }
 
     #content-section {
-        grid-template-areas: "text image";
+        grid-template-areas: 
+        "text text image-sec";
+        height: auto;
+        h1 {
+            grid-area: header;
+            // width: 100%;
+            text-align: center;
+            height: 1rem;
+        }
+        .text-warp {
+            grid-area: text;
+        }
+
+        .image-sec {
+            margin-top:2rem;
+            grid-area: image-sec;
+            // max-width: 50%;
+            // max-height: 60%;
+            // height: min-content;
+            // width:50%;
+            clear:none;
+            #table {
+                height:50%;
+                object-fit: scale-down;
+
+            }
+        }
     }
 
     #image-section {
         
         grid-template-areas: "image text";
         
-        
-        #text-wrap {
+        .text-wrap {
             grid-area: text;
         }
         #salt {
             grid-area: image;
         }
     }
-
-
-
 </style>
