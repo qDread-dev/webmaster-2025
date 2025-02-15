@@ -1,6 +1,7 @@
 ---
 import Footer from '../components/Footer.astro'
 import Navbar from '../components/Navbar.astro'
+import { Image } from 'astro:assets';
 ---
 <html lang="en">
     <head>
@@ -8,7 +9,27 @@ import Navbar from '../components/Navbar.astro'
     </head>
     <body>
         <Navbar/>
-            
+        <div id="staff-photos">
+            <!-- <Image></Image>
+            <Image></Image>
+            <Image></Image>
+            <Image></Image> -->
+        </div>
+        <div id="mission">
+            <div class="mission-desc">
+                <p>
+                    The dream of a restaurant started in college, where homemade meals became a source for the nostalgia students desperately wanted to feel once becoming independent. Through their shared love for Indian cuisine, Evan and Karthik cooked meals using recipes passed down through generations in Karthik's family, and eventually, this grew into a desire to cook meals for our entire community.
+                </p>
+            </div>
+            <div class="mission-desc">
+                <p>
+                    At this restaurant, we aspire to carry the legacy given to us by Karthik's ancestors from India through our authentic vegetarian cuisine. We strive for our customers to feel the same sense of nostalgia when Karthik and Evan cooked for themselves in college with their parents recipes.
+                </p>
+            </div>
+            <div id="mission-image">
+                <!-- <Image/> -->
+            </div>
+        </div>
 
         <Footer/>
     </body>
