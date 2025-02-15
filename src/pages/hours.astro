@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import ImageBar from "../components/ImageBar.astro";
+import Footer from "../components/Footer.astro";
 import {Image} from 'astro:assets';
 import roti from '../assets/vegsoup.jpg';
 import resteraunt from "../assets/resteraunt.jpg";
@@ -18,6 +19,7 @@ import resteraunt from "../assets/resteraunt.jpg";
                 <h1>Dunwoody Village</h1>
                 <p>
                     1426 Dunwoody Village Pkwy,
+                    <br>
                     Dunwoody, GA, 30338
                 </p>
             </div>
@@ -25,6 +27,7 @@ import resteraunt from "../assets/resteraunt.jpg";
                 <h1>Hours</h1>
                 <p>
                     Monday - Saturday: 11AM - 9PM
+                    <br>
                     Sunday: 12PM - 8PM
                 </p>
             </div>
@@ -47,13 +50,23 @@ import resteraunt from "../assets/resteraunt.jpg";
                 </style>
             </div>
         </div>
-        <!-- footer -->
+        <Footer/>
     </body>
 </html>
 
 <style lang="scss">
 
+    @font-face {
+        font-family: 'Poppins';
+        src: url("/webmaster-2025/fonts/Poppins-Regular.ttf") format("ttf");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    
     #info {
+        
         margin: 10rem 5rem 10rem 5rem;
 
         display: grid;
@@ -67,7 +80,10 @@ import resteraunt from "../assets/resteraunt.jpg";
 
         #location, #hours {
             text-align: center;
+            h1, p {
+                font-family: 'Poppins', sans-serif;
 
+            }
         }
 
         #resteraunt-image {
