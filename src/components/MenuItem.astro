@@ -7,7 +7,7 @@ const {title, desc, price, src, ...attrs} = Astro.props;
 
 <div class="menu-item">
 
-    <Image id="menu-image" src={src} inferSize="true" {...attrs} alt="A menu item"/>
+    <Image id="menu-image" src={src} inferSize {...attrs} alt="A menu item"/>
 
     <div class="desc">
         <h1>{title}</h1>
