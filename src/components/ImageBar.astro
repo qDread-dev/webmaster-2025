@@ -1,14 +1,22 @@
 ---
-const {src, ...attrs} = Astro.props;
+const {header, src, ...attrs} = Astro.props;
 import {Image} from 'astro:assets';
 ---
 
 <div class="image-bar">
     <Image id="image" src={src} {...attrs} alt="header image" inferSize={true}></Image>
+    <h1>{header}</h1>
 </div>
 
 
 <style lang="scss">
+    @font-face {
+        font-family: 'Poppins';
+        src: url("/webmaster-2025/fonts/Poppins-Regular.ttf") format("ttf");
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
     .image-bar {
         width: 100vw;
         display:flex;
@@ -17,9 +25,24 @@ import {Image} from 'astro:assets';
         height: 25vh;
 
         overflow: hidden;
+        position: relative;
         #image {
             object-fit: cover;
+            object-position: bottom;
             width:100%;
+        }
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            color: white;
+
+            font-size: 5rem;
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -100%);
+            // z-index: 100;
+            // text-align: center;
+            // vertical-align: center;
         }
     }
 </style>

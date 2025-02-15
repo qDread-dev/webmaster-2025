@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar.astro";
 import ImageBar from "../components/ImageBar.astro";
 import Footer from "../components/Footer.astro";
 import {Image} from 'astro:assets';
-import roti from '../assets/vegsoup.jpg';
+import rice from '../assets/rice.png';
 import resteraunt from "../assets/resteraunt.jpg";
 ---
 
@@ -13,7 +13,7 @@ import resteraunt from "../assets/resteraunt.jpg";
     </head>
     <body>
         <Navbar/>
-        <ImageBar src={roti}/>
+        <ImageBar header="Hours" src={rice}/>
         <div id="info">
             <div id="location" class="text-contain">
                 <h1>Dunwoody Village</h1>
