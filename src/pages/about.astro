@@ -15,6 +15,7 @@ import comp from '../assets/comp.jpeg';
     <body>
         <Navbar/>
         <div id="staff-photos">
+            <h1 style="text-align:center;">Staff</h1>
             <!-- <Image></Image>
             <Image></Image>
             <Image></Image>
@@ -52,23 +53,33 @@ import comp from '../assets/comp.jpeg';
 
         <div id="approach-steps">
             <div class="step">
-                <div id="text"></div>
-                <Image src={fam} alt="family in feild"/>
+                <div class="text">
+                    <p>The majority of our ingredients are locally sourced, allowing us to maintain freshness and flavor.</p>
+                </div>
+                <Image class="step-img" src={fam} alt="family in feild"/>
             </div>
             <div class="step">
-                <div id="text"></div>
-                <Image src={vege} alt="veges on a table"/>
+                <div class="text">
+                    <p>All of our ingredients are prepped the day of, keeping our food tasty and fresh.</p>
+                </div>
+                <Image class="step-img" src={vege} alt="veges on a table"/>
             </div>
             <div class="step">
-                <div id="text"></div>
-                <Image src={clay} alt="woman"/>
+                <div class="text">
+                    <p>We use an in-house tandoor to make our breads to maintain tradition.</p>
+                </div>
+                <Image class="step-img" src={clay} alt="woman"/>
             </div>
             <div class="step">
-                <div id="text"></div>
-                <Image src={comp} alt="composting"/>
+                <div class="text">
+                    <p>We compost kitchen scraps to reduce waste, exemplifying sustainable cooking practices.</p>
+                </div>
+                <Image class="step-img" src={comp} alt="composting"/>
             </div>
             <div class="step">
-                <div id="text"></div>
+                <div class="text">
+                    <p>We donate our excess food to the Atlanta Community Food Bank to give back to the community and reduce waste.</p>
+                </div>
                 <!-- <Image/> -->
             </div>
         </div>
@@ -97,4 +108,38 @@ import comp from '../assets/comp.jpeg';
             }
         }
     }
+
+    #approach > * {
+        text-align: center;
+    }
+
+    #approach-steps {
+        // margin-left: 2rem;
+        // margin-right: 2rem;
+
+        .step {
+            &:nth-child(odd) {
+                grid-template-rows: 1.25fr .75fr;
+                grid-template-areas: "image text";
+            }
+
+            &:nth-child(even) {
+                grid-template-rows: 0.75fr 1.25fr;
+                grid-template-areas: "text-s image-s";
+            }
+            .step-img {
+
+                grid-area: image-s;
+                object-fit: scale-down;
+                width: 50%;
+                height: min-content;
+                width:min-content;
+            }
+            div.text {
+                text-wrap: pretty;
+                grid-area: text-s;
+            }
+        }
+    }
+
 </style>
