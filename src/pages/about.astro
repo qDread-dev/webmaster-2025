@@ -56,7 +56,9 @@ import comp from '../assets/comp.jpeg';
                 <div class="text">
                     <p>The majority of our ingredients are locally sourced, allowing us to maintain freshness and flavor.</p>
                 </div>
-                <Image class="step-img" src={fam} alt="family in feild"/>
+                <div class="step-img">
+                    <Image src={fam} alt="family in feild"/>
+                </div>
             </div>
             <div class="step">
                 <div class="text">
@@ -98,10 +100,9 @@ import comp from '../assets/comp.jpeg';
 
             grid-template-areas: "text image";
             grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
             .mission-desc {
                 grid-area: text;
-                margin-left: 2rem;
+                margin-left: 4rem;
             }
             #m-img {
                 grid-area: image;
@@ -119,26 +120,27 @@ import comp from '../assets/comp.jpeg';
 
         .step {
             &:nth-child(odd) {
-                grid-template-rows: 1.25fr .75fr;
+                grid-template-rows: 1fr 1fr;
                 grid-template-areas: "image text";
             }
 
             &:nth-child(even) {
-                grid-template-rows: 0.75fr 1.25fr;
+                grid-template-rows: 1fr 1fr;
                 grid-template-areas: "text-s image-s";
-            }
-            .step-img {
+                .step-img {
 
-                grid-area: image-s;
-                object-fit: scale-down;
-                width: 50%;
-                height: min-content;
-                width:min-content;
+grid-area: image-s;
+object-fit: scale-down;
+width: 50%;
+height: min-content;
+width:min-content;
+}
+div.text {
+text-wrap: pretty;
+grid-area: text-s;
+}
             }
-            div.text {
-                text-wrap: pretty;
-                grid-area: text-s;
-            }
+            
         }
     }
 
