@@ -7,6 +7,10 @@ import fam from '../assets/fam.jpg';
 import vege from '../assets/vege.jpg';
 import clay from '../assets/clay.jpg';
 import comp from '../assets/comp.jpeg';
+
+import lyvia from '../assets/staff/lyvia.png';
+
+import nik from '../assets/staff/nik.png';
 ---
 <html lang="en">
     <head>
@@ -14,12 +18,24 @@ import comp from '../assets/comp.jpeg';
     </head>
     <body>
         <Navbar/>
+        <h1 style="text-align:center;">Staff</h1>
         <div id="staff-photos">
-            <h1 style="text-align:center;">Staff</h1>
-            <!-- <Image></Image>
-            <Image></Image>
-            <Image></Image>
-            <Image></Image> -->
+            <div class="staff-wrap">
+                <Image class="staff-img" src={nik} alt="Lyvia Huang"></Image>
+                <div class="staff-info">
+                    <h2>Nikolas Dyer</h2>
+                    <p>Owner/Manager</p>
+                </div>
+            </div>
+
+            <div class="staff-wrap">
+                <Image class="staff-img" src={lyvia} alt="Lyvia Huang"></Image>
+                <div class="staff-info">
+                    <h2>Lyvia Huang</h2>
+                    <p>Co-Owner/Head Chef</p>
+                </div>
+            </div>
+            
         </div>
         <div id="mission">
             <h1>Our Mission</h1>
@@ -57,20 +73,20 @@ import comp from '../assets/comp.jpeg';
                     <p>The majority of our ingredients are locally sourced, allowing us to maintain freshness and flavor.</p>
                 </div>
                 <div class="step-img">
-                    <Image src={fam} alt="family in feild"/>
+                    <Image class="step-img" style="width: 75%;" src={fam} alt="family in feild"/>
                 </div>
             </div>
             <div class="step">
                 <div class="text">
                     <p>All of our ingredients are prepped the day of, keeping our food tasty and fresh.</p>
                 </div>
-                <Image class="step-img" src={vege} alt="veges on a table"/>
+                <Image class="step-img" style="width: 75%;" src={vege} alt="veges on a table"/>
             </div>
             <div class="step">
                 <div class="text">
                     <p>We use an in-house tandoor to make our breads to maintain tradition.</p>
                 </div>
-                <Image class="step-img" src={clay} alt="woman"/>
+                <Image class="step-img" style="width: 75%;" src={clay} alt="woman"/>
             </div>
             <div class="step">
                 <div class="text">
@@ -91,6 +107,27 @@ import comp from '../assets/comp.jpeg';
 </html>
 
 <style lang="scss">
+
+    #staff-photos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .staff-wrap {
+            // width: min-content;
+            text-align: center;
+            height: 25%;
+            .staff-img {
+                border-radius: 100rem;
+                object-fit: scale-down;
+            }
+            .staff-info {
+                text-align: center;
+
+            }
+
+        }
+        
+    }
+
     #mission {
         h1 {
             text-align:center;
@@ -115,32 +152,36 @@ import comp from '../assets/comp.jpeg';
     }
 
     #approach-steps {
-        // margin-left: 2rem;
-        // margin-right: 2rem;
-
         .step {
+            display: grid;
+            grid-template-colums: 1fr 1fr;
             &:nth-child(odd) {
-                grid-template-rows: 1fr 1fr;
+                // grid-template-columns: max-content;
                 grid-template-areas: "image text";
             }
-
             &:nth-child(even) {
-                grid-template-rows: 1fr 1fr;
-                grid-template-areas: "text-s image-s";
-                .step-img {
-
-grid-area: image-s;
-object-fit: scale-down;
-width: 50%;
-height: min-content;
-width:min-content;
-}
-div.text {
-text-wrap: pretty;
-grid-area: text-s;
-}
+                grid-template-areas: "text image";
+                
             }
-            
+            margin: 2rem;
+            .step-img {
+                grid-area: image;
+                object-fit: scale-down;
+                width: 90%;
+                height: min-content;
+            }
+
+            div.text {
+                text-wrap: pretty;
+                grid-area: text;
+                text-align: center;
+                vertical-align: middle;
+                p {
+                    
+                    
+                }
+            }
+            height: min-content
         }
     }
 
